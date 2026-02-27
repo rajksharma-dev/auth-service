@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: authservice
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db
+    username: root
+    password: Pinkcity@123
+    jpa:
+      hibernate:
+        ddl-auto: validate
+      show-sql: true
+
+server:
+  port: 8081
+jwt:
+  secret: KM0Jh5HxF3wVmMOA9r3SQplm6ETGhU5785kBdzvo2MKviSAId2gEGPvVUSs4gs+vuk3QHKLucoKcL3LqC6lvmA==
