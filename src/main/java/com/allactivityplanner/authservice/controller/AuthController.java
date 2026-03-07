@@ -38,7 +38,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest request) {
-
+        System.out.println("LoginRequest::"+request);
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.email(),
@@ -49,7 +49,7 @@ public class AuthController {
         User user = userService.findByEmail(request.email()).get();
 
         String token = jwtService.generateToken(user);
-
+        System.out.println("JwtService::token::" + token);
         return new LoginResponse(
                 token,
                 user.getEmail(),
