@@ -76,8 +76,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         } catch (ExpiredJwtException ex) {
             log.info("JWT expired: {}", ex.getMessage());
+            SecurityContextHolder.clearContext();
         } catch (JwtException ex) {
             log.warn("Invalid JWT token: {}", ex.getMessage());
+            SecurityContextHolder.clearContext();
         }
         filterChain.doFilter(request, response);
     }
