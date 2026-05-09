@@ -5,10 +5,10 @@ spring:
   datasource:
 #    url: jdbc:mysql://localhost:3306/auth_db
 #    username: root
-#    password: Pinkcity@123
+#    password: ${SPRING_DATASOURCE_PASSWORD}
     url: jdbc:mysql://all-ativityplanner-db.chi8ecww0ayl.ap-south-1.rds.amazonaws.com:3306/auth_db
     username: admin
-    password: Pinkcity123
+    password: ${SPRING_DATASOURCE_PASSWORD}
     jpa:
       hibernate:
         ddl-auto: validate
@@ -17,4 +17,4 @@ spring:
 server:
   port: 8080
 jwt:
-  secret: KM0Jh5HxF3wVmMOA9r3SQplm6ETGhU5785kBdzvo2MKviSAId2gEGPvVUSs4gs+vuk3QHKLucoKcL3LqC6lvmA==
+  secret: ${APP_JWT_SECRET}
